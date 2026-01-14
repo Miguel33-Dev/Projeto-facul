@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário de Produtos</title>
+</head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead th {
+    background-color: #1E313F;
+    color: #fff;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #e9e9e9;
+}
+
+table tbody tr:hover {
+    background-color: #d8ddd8;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.link-estoque {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Inventário de Produtos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço (R$)</th>
+                    <th>Código de Barras</th>
+                    <th>Categoria</th>
+                    <th>Excluir</th> <!-- Adiciona coluna para exclusão -->
+                </tr>
+            </thead>
+            <tbody id="lista-produtos">
+            </tbody>
+        </table>
+        <p class="link-estoque">
+            <a href="estoque.html">Voltar para o Gerenciamento de Estoque</a>
+        </p>
+    </div>
+    <script>
+        // Recupera os produtos armazenados no LocalStorage
+        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+        // Seleciona o corpo da tabela onde os produtos serão exibidos
+        const listaProdutos = document.querySelector("#lista-produtos");
+
+        // Função para renderizar a tabela
+        function renderizarTabela() {
+            listaProdutos.innerHTML = ""; // Limpa a tabela antes de renderizar novamente
+
+            produtos.forEach((produto, index) => {
+                // Cria uma nova linha para o produto
+                const linha = document.createElement("tr");
+
+                // Define o conteúdo da linha com os dados do produto
+                linha.innerHTML = `
+                    <td>${produto.nome}</td>
+                    <td>${produto.quantidade}</td>
+                    <td>R$ ${parseFloat(produto.preco).toFixed(2)}</td>
+                    <td>${produto.codigoBarras}</td>
+                    <td>${produto.categoria}</td>
+                    <td>
+                        <button class="btn-excluir" data-index="${index}">Excluir</button>
+                    </td>
+                `;
+
+                // Adiciona a linha à tabela
+                listaProdutos.appendChild(linha);
+            });
+
+            // Adiciona eventos de clique aos botões de exclusão
+            document.querySelectorAll(".btn-excluir").forEach(botao => {
+                botao.addEventListener("click", excluirProduto);
+            });
+        }
+
+        // Função para excluir um produto
+        function excluirProduto(event) {
+            const index = event.target.dataset.index; // Obtém o índice do produto no array
+            produtos.splice(index, 1); // Remove o produto do array
+            localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o LocalStorage
+            renderizarTabela(); // Rerenderiza a tabela
+        }
+
+        // Renderiza a tabela inicial
+        renderizarTabela();
+    </script>    
+</body>
+</html>

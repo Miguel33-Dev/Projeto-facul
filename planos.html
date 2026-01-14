@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos - Wzk Inventory</title>
+</head>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilos para a página de planos */
+#planos {
+    margin-top: 30px;
+}
+
+.plano {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #667eea;
+}
+
+.plano h2 {
+    font-size: 1.8em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.plano p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.plano h3 {
+    font-size: 1.4em;
+    color: #1E313F;
+    margin-top: 10px;
+}
+
+.plano ul {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.plano ul li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+#opcoes-pagamento, #promocao {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #764ba2;
+}
+
+#opcoes-pagamento h2, #promocao h2 {
+    font-size: 1.8em;
+    color: #764ba2;
+    margin-bottom: 10px;
+}
+
+#opcoes-pagamento p, #promocao p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.link-paginainicial {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.link-paginainicial a {
+    text-decoration: none;
+    color: #1E313F;
+    font-size: 1.1em;
+}
+h1 {
+    font-size: 2em;
+    color: #667eea;
+    margin-bottom: 10px;
+    text-align: center;
+}
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Planos para Gestão do seu Estoque</h1>
+        </header>
+
+        <section id="planos">
+            <div class="plano">
+                <h2>Plano Básico</h2>
+                <p><strong>Preço:</strong> R$ 49,90/mês</p>
+                <p><strong>Ideal para:</strong> Pequenos negócios ou empreendedores individuais.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Controle básico de entrada e saída de produtos.</li>
+                    <li>Relatórios mensais simples.</li>
+                    <li>Cadastro de até 100 produtos.</li>
+                    <li>Suporte via e-mail.</li>
+                </ul>
+            </div>
+
+            <div class="plano">
+                <h2>Plano Intermediário</h2>
+                <p><strong>Preço:</strong> R$ 99,90/mês</p>
+                <p><strong>Ideal para:</strong> Empresas de pequeno a médio porte.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Controle de estoque completo (entradas, saídas, mínimo e máximo).</li>
+                    <li>Geração automática de relatórios diários e mensais.</li>
+                    <li>Cadastro de até 500 produtos.</li>
+                    <li>Integração com sistemas de vendas.</li>
+                    <li>Suporte via e-mail e chat.</li>
+                </ul>
+            </div>
+
+            <div class="plano">
+                <h2>Plano Avançado</h2>
+                <p><strong>Preço:</strong> R$ 199,90/mês</p>
+                <p><strong>Ideal para:</strong> Empresas de médio a grande porte.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Tudo do plano intermediário.</li>
+                    <li>Automação de pedidos de reposição.</li>
+                    <li>Controle multiestoque (vários locais).</li>
+                    <li>Relatórios customizáveis com gráficos.</li>
+                    <li>Cadastro ilimitado de produtos.</li>
+                    <li>Acesso para 3 usuários simultâneos.</li>
+                    <li>Suporte via telefone, e-mail e chat.</li>
+                </ul>
+            </div>
+
+            <div class="plano">
+                <h2>Plano Personalizado</h2>
+                <p><strong>Preço:</strong> Sob consulta.</p>
+                <p><strong>Ideal para:</strong> Empresas que precisam de soluções específicas.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Integrações avançadas (ERPs, marketplaces, APIs).</li>
+                    <li>Customizações exclusivas para o negócio.</li>
+                    <li>Treinamento para a equipe.</li>
+                    <li>Suporte dedicado.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="opcoes-pagamento">
+            <h2>Opções de Pagamento</h2>
+            <p><strong>Mensal:</strong> Pagamento recorrente.</p>
+            <p><strong>Anual (desconto de 15%):</strong> Pagamento à vista com economia.</p>
+        </section>
+
+        <section id="promocao">
+            <h2>Promoção de Lançamento</h2>
+            <p>30 dias gratuitos para novos clientes.</p>
+            <p>Desconto de 10% nos primeiros 6 meses ao contratar planos anuais.</p>
+        </section>
+
+        <p class="link-paginainicial">
+            <a href="paginainicial.html">Voltar para a página inicial</a>
+        </p>
+    </div>
+</body>
+</html>

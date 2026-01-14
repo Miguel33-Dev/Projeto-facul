@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Estoque</title>
+</head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #737c87;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.botao {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.add-botao {
+    background-color: #1E313F;
+}
+
+.edit-botao {
+    background-color: #333;
+}
+
+.delete-botao {
+    background-color: #121111;
+}
+
+.botao:hover {
+    opacity: 0.9;
+}
+
+.link-voltar {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+</style>
+<body>
+    <div class="container"> <!-- Inicia um contêiner para centralizar e organizar o conteúdo -->
+        <h1>Gerenciamento de Estoque</h1>
+        <form> <!-- Início do formulário -->
+            <div class="grupo-formulario">
+                <label for="nome-produto">Nome do Produto:</label>
+                <input type="text" id="nome-produto" name="nome-produto" placeholder="Ex: Arroz, Feijão"> <!-- Campo de texto para o nome do produto. -->
+            </div>
+            <div class="grupo-formulario">
+                <label for="quantidade-produto">Quantidade:</label>
+                <input type="number" id="quantidade-produto" name="quantidade-produto" placeholder="Ex: 50"> <!-- Campo numérico. -->
+            </div>
+            <div class="grupo-formulario"> 
+                <label for="preco-produto">Preço (R$):</label>
+                <input type="number" id="preco-produto" name="preco-produto" placeholder="Ex: 5.99"> <!-- Campo numérico. -->
+            </div>
+            <div class="grupo-formulario">
+                <label for="codigo-barras">Código de Barras:</label>
+                <input type="text" id="codigo-barras" name="codigo-barras" placeholder="Ex: 1234567890123"> <!-- Campo de texto para o código de barras -->
+            </div>
+            <div class="grupo-formulario"> <!-- Categoriza os produtos -->
+                <label for="categoria-produtos">Categoria:</label>
+                <select id="categoria-produtos" name="categoria-produtos"> <!-- Campo de seleção com opções -->
+                    <!-- Defina cada opção -->
+                    <option value="alimentos">Alimentos</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="limpeza">Produtos de Limpeza</option>
+                    <option value="higiene">Higiene Pessoal</option>
+                </select>
+            </div>
+            <div class="acoes"> <!-- Define as ações do formulário -->
+                <button type="submit" class="botao add-botao">Adicionar Produto</button> <!-- Envia os dados do formulário -->
+                <a href="inventario.html"> <!-- Link que direciona para o inventário -->
+                    <button type="button" class="botao edit-botao">Acessar Inventário</button> <!-- Botão que acessa o inventário -->
+                </a>
+                <button type="button" class="botao delete-botao">Excluir Produto</button> <!-- Exclui o produto adicionado -->
+            </div>
+            <p class="link-voltar">
+                <a href="paginainicial.html">Voltar para a páginal incial </a> <!-- Direciona para a página incial -->
+            </p>
+        </form>
+    </div>
+        <script>
+        // Adiciona um evento ao botão de adicionar produto
+        document.querySelector(".add-botao").addEventListener("click", function (event) {
+        event.preventDefault(); // Evita o recarregamento da página
+
+        // Captura os valores dos campos do formulário
+        const nome = document.querySelector("#nome-produto").value.trim().toLowerCase(); // Nome em minúsculas para evitar duplicatas
+        const quantidade = parseInt(document.querySelector("#quantidade-produto").value); // Converte para número inteiro
+        const preco = parseFloat(document.querySelector("#preco-produto").value); // Converte para número decimal
+        const codigoBarras = document.querySelector("#codigo-barras").value.trim();
+        const categoria = document.querySelector("#categoria-produtos").value;
+
+        // Verifica se todos os campos estão preenchidos corretamente
+        if (!nome || isNaN(quantidade) || isNaN(preco) || !codigoBarras || !categoria) {
+            alert("Por favor, preencha todos os campos corretamente.");
+            return;
+        }
+
+        // Recupera os produtos armazenados no LocalStorage (ou cria um array vazio se não houver produtos)
+        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+        // Verifica se o produto já existe no inventário
+        const produtoExistente = produtos.find(produto => produto.nome === nome);
+
+        if (produtoExistente) {
+            // Se o produto já existir, soma as quantidades
+            produtoExistente.quantidade += quantidade;
+            alert("A quantidade do produto foi atualizada com sucesso!");
+        } else {
+            // Caso contrário, cria um novo produto
+            const novoProduto = { 
+                nome, 
+                quantidade, 
+                preco, 
+                codigoBarras, 
+                categoria 
+            };
+            produtos.push(novoProduto);
+            alert("Produto adicionado com sucesso!");
+        }
+
+        // Salva a lista atualizada de produtos no LocalStorage
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+
+        // Limpa os campos do formulário
+        document.querySelector("form").reset();
+        });
+    </script>    
+</body>
+</html>

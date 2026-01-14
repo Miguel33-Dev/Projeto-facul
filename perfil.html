@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+</head>
+<style>
+    /* Estilo Geral */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: white;
+    padding: 75px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555; 
+}
+
+/* Formulários */
+form {
+    background: #e2eaea; 
+    border: 1px solid #b0c4c4;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1em;
+    color: #1E313F;
+    display: block;
+    margin: 12px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b0c4c4;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    background-color: #d8ddd8;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #1E313F;
+    outline: none;
+    background-color: #e2eaea;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1E313F;
+    color: #e2eaea;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button:active {
+    background-color: #555;
+}
+
+.link-paginainicial {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+.equipe-img {
+    max-width: 120px;
+    height: auto;
+    border-radius: 8px;
+}
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Editar Perfil</h1>
+            <p>Atualize suas informações pessoais.</p>
+        </header>
+        <form class="form-perfil">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+
+            <label for="Endereço">Endereço:</label>
+            <input type="text" id="endereço" name="endereço" placeholder="Digite seu endereço">
+
+            <button type="submit" class="botao-salvar">Salvar Alterações</button>
+
+            <p class="link-paginainicial">
+                <a href="paginainicial.html">Voltar para a páginal incial </a>
+            </p>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>(Sobre nós)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Wzk Inventory</title>
+    <link rel="stylesheet" href="/style/styleshist.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sobre nós...</h1>
+        </header>
+
+        <section id="sobre">
+            <h2>Sobre a Wzk Inventory</h2>
+            <p>A Wzk Inventory é especializada no desenvolvimento de sistemas eficientes para o gerenciamento de estoque, oferecendo soluções tecnológicas que facilitam a gestão, otimizam processos e garantem maior controle e precisão nas operações.</p>
+        </section>
+
+        <section id="historia">
+            <h2>Nossa História</h2>
+            <p>Fundada em 2010, a Wzk Inventory começou como um projeto de paixão por tecnologia e logística.<br> 
+                Com uma equipe apaixonada por tecnologia e inovação, a Wzk foi criada para oferecer soluções personalizadas que atendem desde pequenas lojas a grandes redes de distribuição. <br> 
+                Ao longo dos anos, a Wzk cresceu, mas nosso compromisso com a inovação e excelência nunca mudou. Nosso lema é simples: "Organizar é crescer". Acreditamos que uma gestão de estoque eficiente é o coração de qualquer negócio bem-sucedido, e estamos aqui para garantir que nossos clientes alcancem seu máximo potencial.</p>
+        </section>
+
+        <section id="missao-visao">
+            <h2>Missão, Visão e Valores</h2>
+            <p><strong>Missão:</strong> Proporcionar aos nossos clientes ferramentas inovadoras e acessíveis para a gestão de estoques, promovendo eficiência, organização e resultados mensuráveis.</p>
+            <p><strong>Visão:</strong> Ser referência no mercado de soluções tecnológicas para gerenciamento de estoque, reconhecida pela inovação, confiabilidade e impacto positivo nos negócios dos nossos clientes.</p>
+            <p><strong>Valores:</strong> <br>
+                • Inovação: Investimos continuamente em tecnologia e aprimoramento de nossas soluções. <br>
+                • Compromisso com o cliente: Nossa prioridade é atender às necessidades dos nossos parceiros com excelência <br>
+                • Transparência: Atuamos de forma ética e clara em todas as relações. <br>
+                • Simplicidade: Oferecemos sistemas intuitivos e práticos, adaptados às realidades de diferentes empresas.</p>
+        </section>
+
+        <section id="equipe">
+            <h2>Nosso Time</h2>
+            <p>A equipe da Wzk Inventory é composta por profissionais altamente qualificados, apaixonados por tecnologia e dedicados a oferecer as melhores soluções para os nossos clientes.</p>
+            
+            <div class="equipe-fotos">
+               
+                <div class="membro">
+                    <img src="/Imagens/membro3.jpg" alt="Foto do Membro 3" class="equipe-img">
+                    <p> <b>Fabrício Miguel da Silva</b> - Desenvolvedor Web</p>
+                </div>
+                
+            </div>
+        </section>
+
+         <!-- Card redirecionando para os planos -->
+         <section id="planos">
+            <h2>Conheça Nossos Planos 📊 </h2>
+            <div class="menu-planos">
+                <a href="planos.html">
+                    <h4>Clique aqui para acessar nossos planos! </h4>
+                    <p>Descubra as opções disponíveis para o seu negócio e escolha o plano ideal para suas necessidades.</p>
+                </a>
+            </div>
+        </section>
+
+        <p class="link-paginainicial">
+            <a href="paginainicial.html">Voltar para a página inicial</a>
+        </p>
+    </div>
+</body>
+</html>

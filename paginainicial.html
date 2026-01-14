@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Incial</title>
+</head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #1E313F; /* Título com tom escuro */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #1E313F;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card h2 {
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #1E313F;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #d8ddd8; /* Fundo mais claro ao passar o mouse */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Ícones aumentam levemente */
+}
+
+.card:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e2eaea; /* Volta ao fundo original ao clicar */
+}
+
+.retornar-login {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bem-vindo(a)!</h1>
+            <p>Simplificando seu estoque. Potencializando seu negócio.</p>
+        </header>
+        <div class="menu">
+            <div class="card">
+                <a href="estoque.html">
+                    <img src="Imagens/caixa.jpg" alt="Estoque">
+                    <h2>Estoque</h2>
+                    <p>Acesse o formulário para gerenciar seus produtos.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="perfil.html">
+                    <img src="Imagens/perfil.jpg" alt="Perfil">
+                    <h2>Perfil da Loja</h2>
+                    <p>Veja ou edite as informações da sua loja.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="sobrenós.html">
+                    <img src="Imagens/parceria.jpg" alt="Parceria">
+                    <h2>Sobre nós</h2>
+                    <p>Descubra mais sobre a Wzk Inventory, nossa trajetória!</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="duvidas.html">
+                    <img src="Imagens/sac.jpg" alt="Dúvidas">
+                    <h2>Dúvidas</h2>
+                    <p>Consulte respostas para suas dúvidas frequentes.</p>
+                </a>
+            </div>
+        </div>
+        <p class="retornar-login">
+            <a href="login.html"> Sair </a>
+        </p>
+    </div>
+</body>
+</html>

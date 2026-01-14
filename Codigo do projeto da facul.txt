@@ -1,0 +1,1547 @@
+<!DOCTYPE html>(login)
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login - WZK Inventory</title>
+    <link rel="stylesheet" href="/style/styleslogin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu-esquerda"> <!-- Lado esquerdo da página onde está a imagem da logo WZK-->
+            <img src="/Imagens/WZK.jpg" alt="Logo WZK Inventory" class="logo-image">
+        </div>
+        <div class="menu-direita"> <!-- Lado direito da página, onde está a caixa de login -->
+            <h2>Sign Up</h2>
+            <div class="caixa-login">
+                <h3>Acesse sua conta</h3>
+                <form action="/inicio.html" method="get">
+                    <label for="email">Usuário ou e-mail</label>
+                    <input type="text" id="email" placeholder="Usuário ou e-mail" required>
+                    
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                                        
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+            <p class="contato"> 
+                <a href="/duvidas2.html">Fale conosco <span>🎧</span></a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html> (pagina inicial)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Incial</title>
+    <link rel="stylesheet" href="/style/stylepaginicial.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bem-vindo(a)!</h1>
+            <p>Simplificando seu estoque. Potencializando seu negócio.</p>
+        </header>
+        <div class="menu">
+            <div class="card">
+                <a href="/estoque.html">
+                    <img src="/Imagens/caixa.jpg" alt="Estoque">
+                    <h2>Estoque</h2>
+                    <p>Acesse o formulário para gerenciar seus produtos.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/perfil.html">
+                    <img src="/Imagens/perfil.jpg" alt="Perfil">
+                    <h2>Perfil da Loja</h2>
+                    <p>Veja ou edite as informações da sua loja.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/historia.html">
+                    <img src="/Imagens/parceria.jpg" alt="Parceria">
+                    <h2>Sobre nós</h2>
+                    <p>Descubra mais sobre a Wzk Inventory, nossa trajetória!</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="/duvidas.html">
+                    <img src="/Imagens/sac.jpg" alt="Dúvidas">
+                    <h2>Dúvidas</h2>
+                    <p>Consulte respostas para suas dúvidas frequentes.</p>
+                </a>
+            </div>
+        </div>
+        <p class="retornar-login">
+            <a href="/index.html"> Sair </a>
+        </p>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html> (estoque)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Estoque</title>
+    <link rel="stylesheet" href="/style/stylesestoq.css">
+</head>
+<body>
+    <div class="container"> <!-- Inicia um contêiner para centralizar e organizar o conteúdo -->
+        <h1>Gerenciamento de Estoque</h1>
+        <form> <!-- Início do formulário -->
+            <div class="grupo-formulario">
+                <label for="nome-produto">Nome do Produto:</label>
+                <input type="text" id="nome-produto" name="nome-produto" placeholder="Ex: Arroz, Feijão"> <!-- Campo de texto para o nome do produto. -->
+            </div>
+            <div class="grupo-formulario">
+                <label for="quantidade-produto">Quantidade:</label>
+                <input type="number" id="quantidade-produto" name="quantidade-produto" placeholder="Ex: 50"> <!-- Campo numérico. -->
+            </div>
+            <div class="grupo-formulario"> 
+                <label for="preco-produto">Preço (R$):</label>
+                <input type="number" id="preco-produto" name="preco-produto" placeholder="Ex: 5.99"> <!-- Campo numérico. -->
+            </div>
+            <div class="grupo-formulario">
+                <label for="codigo-barras">Código de Barras:</label>
+                <input type="text" id="codigo-barras" name="codigo-barras" placeholder="Ex: 1234567890123"> <!-- Campo de texto para o código de barras -->
+            </div>
+            <div class="grupo-formulario"> <!-- Categoriza os produtos -->
+                <label for="categoria-produtos">Categoria:</label>
+                <select id="categoria-produtos" name="categoria-produtos"> <!-- Campo de seleção com opções -->
+                    <!-- Defina cada opção -->
+                    <option value="alimentos">Alimentos</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="limpeza">Produtos de Limpeza</option>
+                    <option value="higiene">Higiene Pessoal</option>
+                </select>
+            </div>
+            <div class="acoes"> <!-- Define as ações do formulário -->
+                <button type="submit" class="botao add-botao">Adicionar Produto</button> <!-- Envia os dados do formulário -->
+                <a href="/inventario.html"> <!-- Link que direciona para o inventário -->
+                    <button type="button" class="botao edit-botao">Acessar Inventário</button> <!-- Botão que acessa o inventário -->
+                </a>
+                <button type="button" class="botao delete-botao">Excluir Produto</button> <!-- Exclui o produto adicionado -->
+            </div>
+            <p class="link-voltar">
+                <a href="/inicio.html">Voltar para a páginal incial </a> <!-- Direciona para a página incial -->
+            </p>
+        </form>
+    </div>
+        <script>
+        // Adiciona um evento ao botão de adicionar produto
+        document.querySelector(".add-botao").addEventListener("click", function (event) {
+        event.preventDefault(); // Evita o recarregamento da página
+
+        // Captura os valores dos campos do formulário
+        const nome = document.querySelector("#nome-produto").value.trim().toLowerCase(); // Nome em minúsculas para evitar duplicatas
+        const quantidade = parseInt(document.querySelector("#quantidade-produto").value); // Converte para número inteiro
+        const preco = parseFloat(document.querySelector("#preco-produto").value); // Converte para número decimal
+        const codigoBarras = document.querySelector("#codigo-barras").value.trim();
+        const categoria = document.querySelector("#categoria-produtos").value;
+
+        // Verifica se todos os campos estão preenchidos corretamente
+        if (!nome || isNaN(quantidade) || isNaN(preco) || !codigoBarras || !categoria) {
+            alert("Por favor, preencha todos os campos corretamente.");
+            return;
+        }
+
+        // Recupera os produtos armazenados no LocalStorage (ou cria um array vazio se não houver produtos)
+        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+        // Verifica se o produto já existe no inventário
+        const produtoExistente = produtos.find(produto => produto.nome === nome);
+
+        if (produtoExistente) {
+            // Se o produto já existir, soma as quantidades
+            produtoExistente.quantidade += quantidade;
+            alert("A quantidade do produto foi atualizada com sucesso!");
+        } else {
+            // Caso contrário, cria um novo produto
+            const novoProduto = { 
+                nome, 
+                quantidade, 
+                preco, 
+                codigoBarras, 
+                categoria 
+            };
+            produtos.push(novoProduto);
+            alert("Produto adicionado com sucesso!");
+        }
+
+        // Salva a lista atualizada de produtos no LocalStorage
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+
+        // Limpa os campos do formulário
+        document.querySelector("form").reset();
+        });
+    </script>    
+</body>
+</html>
+
+<!DOCTYPE html>(perfil)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="/style/stylesperfil.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Editar Perfil</h1>
+            <p>Atualize suas informações pessoais.</p>
+        </header>
+        <form class="form-perfil">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" required>
+
+            <label for="Endereço">Endereço:</label>
+            <input type="text" id="endereço" name="endereço" placeholder="Digite seu endereço">
+
+            <button type="submit" class="botao-salvar">Salvar Alterações</button>
+
+            <p class="link-paginainicial">
+                <a href="/inicio.html">Voltar para a páginal incial </a>
+            </p>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>(Sobre nós)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Wzk Inventory</title>
+    <link rel="stylesheet" href="/style/styleshist.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sobre nós...</h1>
+        </header>
+
+        <section id="sobre">
+            <h2>Sobre a Wzk Inventory</h2>
+            <p>A Wzk Inventory é especializada no desenvolvimento de sistemas eficientes para o gerenciamento de estoque, oferecendo soluções tecnológicas que facilitam a gestão, otimizam processos e garantem maior controle e precisão nas operações.</p>
+        </section>
+
+        <section id="historia">
+            <h2>Nossa História</h2>
+            <p>Fundada em 2010, a Wzk Inventory começou como um projeto de paixão por tecnologia e logística.<br> 
+                Com uma equipe apaixonada por tecnologia e inovação, a Wzk foi criada para oferecer soluções personalizadas que atendem desde pequenas lojas a grandes redes de distribuição. <br> 
+                Ao longo dos anos, a Wzk cresceu, mas nosso compromisso com a inovação e excelência nunca mudou. Nosso lema é simples: "Organizar é crescer". Acreditamos que uma gestão de estoque eficiente é o coração de qualquer negócio bem-sucedido, e estamos aqui para garantir que nossos clientes alcancem seu máximo potencial.</p>
+        </section>
+
+        <section id="missao-visao">
+            <h2>Missão, Visão e Valores</h2>
+            <p><strong>Missão:</strong> Proporcionar aos nossos clientes ferramentas inovadoras e acessíveis para a gestão de estoques, promovendo eficiência, organização e resultados mensuráveis.</p>
+            <p><strong>Visão:</strong> Ser referência no mercado de soluções tecnológicas para gerenciamento de estoque, reconhecida pela inovação, confiabilidade e impacto positivo nos negócios dos nossos clientes.</p>
+            <p><strong>Valores:</strong> <br>
+                • Inovação: Investimos continuamente em tecnologia e aprimoramento de nossas soluções. <br>
+                • Compromisso com o cliente: Nossa prioridade é atender às necessidades dos nossos parceiros com excelência <br>
+                • Transparência: Atuamos de forma ética e clara em todas as relações. <br>
+                • Simplicidade: Oferecemos sistemas intuitivos e práticos, adaptados às realidades de diferentes empresas.</p>
+        </section>
+
+        <section id="equipe">
+            <h2>Nosso Time</h2>
+            <p>A equipe da Wzk Inventory é composta por profissionais altamente qualificados, apaixonados por tecnologia e dedicados a oferecer as melhores soluções para os nossos clientes.</p>
+            
+            <div class="equipe-fotos">
+               
+                <div class="membro">
+                    <img src="/Imagens/membro1.jpg" alt="Foto do Membro 1" class="equipe-img">
+                    <p><b>Jennifer Barbosa Carlos</b> - Desenvolvedora HTML</p>
+                </div>
+                <div class="membro">
+                    <img src="/Imagens/membro2.jpg" alt="Foto do Membro 2" class="equipe-img">
+                    <p><b>Thiago Almeida</b>- Integração e Funcionalidades</p>
+                </div>
+                <div class="membro">
+                    <img src="/Imagens/membro3.jpg" alt="Foto do Membro 3" class="equipe-img">
+                    <p> <b>Fabrício Miguel da Silva</b> - Integração e Funcionalidades</p>
+                </div>
+                <div class="membro">
+                    <img src="/Imagens/membro4.jpg" alt="Foto do Membro 4" class="equipe-img">
+                    <p> <b> Shirley Mayumi Wakavaiachi </b> - Desenvolvedor de Software para IoT </p>
+                </div>
+                <div class="membro">
+                    <img src="/Imagens/membro5.jpg" alt="Foto do Membro 5" class="equipe-img">
+                    <p> <b> Diego Ramos Escobar </b> - Desenvolvedor de Software para IoT </p>
+                </div>
+                <div class="membro">
+                    <img src="/Imagens/membro6.jpg" alt="Foto do Membro 6" class="equipe-img">
+                    <p> <b> Cleyton Tevez Lopes De Sousa </b> - Responsável pela Documentação </p>
+                </div>
+                <div class="membro ceo">
+                    <img src="/Imagens/membro7.jpg" alt="Foto do Membro 5" class="equipe-img">
+                    <p> <b> Kauann Mendes Witoszynski </b> - CEO </p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Card redirecionando para os planos -->
+         <section id="planos">
+            <h2>Conheça Nossos Planos 📊 </h2>
+            <div class="menu-planos">
+                <a href="/planos.html">
+                    <h4>Clique aqui para acessar nossos planos! </h4>
+                    <p>Descubra as opções disponíveis para o seu negócio e escolha o plano ideal para suas necessidades.</p>
+                </a>
+            </div>
+        </section>
+
+        <p class="link-paginainicial">
+            <a href="/inicio.html">Voltar para a página inicial</a>
+        </p>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>(Duvidas)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Dúvidas</title>
+    <link rel="stylesheet" href="/style/stylesduv.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Entre em Contato</h1>
+            <p>Envie-nos suas dúvidas ou problemas. Retornaremos o mais breve possível.</p>
+        </header>
+        <form class="form-contato">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="tel">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+
+            <label for="problema">Descrição do Problema:</label>
+            <textarea id="problema" name="problema" placeholder="Explique o problema" rows="4" required></textarea>
+
+            <button type="submit" class="botao-retornar">Enviar</button>
+
+            <p class="retornar">
+                <a href="/inicio.html">Voltar para a páginal incial </a>
+            </p>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>(Duvidas2)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Dúvidas</title>
+    <link rel="stylesheet" href="/style/stylesduv.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Entre em Contato</h1>
+            <p>Envie-nos suas dúvidas ou problemas. Retornaremos o mais breve possível.</p>
+        </header>
+        <form class="form-contato">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="tel">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone">
+
+            <label for="problema">Descrição do Problema:</label>
+            <textarea id="problema" name="problema" placeholder="Explique o problema" rows="4" required></textarea>
+
+            <button type="submit" class="botao-retornar">Enviar</button>
+
+            <p class="retornar">
+                <a href="/inicio.html">Voltar para a páginal incial </a>
+            </p>
+            
+        </form>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>(inventario)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário de Produtos</title>
+    <link rel="stylesheet" href="/style/stylesinvent.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventário de Produtos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço (R$)</th>
+                    <th>Código de Barras</th>
+                    <th>Categoria</th>
+                    <th>Excluir</th> <!-- Adiciona coluna para exclusão -->
+                </tr>
+            </thead>
+            <tbody id="lista-produtos">
+            </tbody>
+        </table>
+        <p class="link-estoque">
+            <a href="/estoque.html">Voltar para o Gerenciamento de Estoque</a>
+        </p>
+    </div>
+    <script>
+        // Recupera os produtos armazenados no LocalStorage
+        let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+
+        // Seleciona o corpo da tabela onde os produtos serão exibidos
+        const listaProdutos = document.querySelector("#lista-produtos");
+
+        // Função para renderizar a tabela
+        function renderizarTabela() {
+            listaProdutos.innerHTML = ""; // Limpa a tabela antes de renderizar novamente
+
+            produtos.forEach((produto, index) => {
+                // Cria uma nova linha para o produto
+                const linha = document.createElement("tr");
+
+                // Define o conteúdo da linha com os dados do produto
+                linha.innerHTML = `
+                    <td>${produto.nome}</td>
+                    <td>${produto.quantidade}</td>
+                    <td>R$ ${parseFloat(produto.preco).toFixed(2)}</td>
+                    <td>${produto.codigoBarras}</td>
+                    <td>${produto.categoria}</td>
+                    <td>
+                        <button class="btn-excluir" data-index="${index}">Excluir</button>
+                    </td>
+                `;
+
+                // Adiciona a linha à tabela
+                listaProdutos.appendChild(linha);
+            });
+
+            // Adiciona eventos de clique aos botões de exclusão
+            document.querySelectorAll(".btn-excluir").forEach(botao => {
+                botao.addEventListener("click", excluirProduto);
+            });
+        }
+
+        // Função para excluir um produto
+        function excluirProduto(event) {
+            const index = event.target.dataset.index; // Obtém o índice do produto no array
+            produtos.splice(index, 1); // Remove o produto do array
+            localStorage.setItem("produtos", JSON.stringify(produtos)); // Atualiza o LocalStorage
+            renderizarTabela(); // Rerenderiza a tabela
+        }
+
+        // Renderiza a tabela inicial
+        renderizarTabela();
+    </script>    
+</body>
+</html>
+
+<!DOCTYPE html>(planos)
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos - Wzk Inventory</title>
+    <link rel="stylesheet" href="/style/stylesplanos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Planos para Gestão do seu Estoque</h1>
+        </header>
+
+        <section id="planos">
+            <div class="plano">
+                <h2>Plano Básico</h2>
+                <p><strong>Preço:</strong> R$ 49,90/mês</p>
+                <p><strong>Ideal para:</strong> Pequenos negócios ou empreendedores individuais.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Controle básico de entrada e saída de produtos.</li>
+                    <li>Relatórios mensais simples.</li>
+                    <li>Cadastro de até 100 produtos.</li>
+                    <li>Suporte via e-mail.</li>
+                </ul>
+            </div>
+
+            <div class="plano">
+                <h2>Plano Intermediário</h2>
+                <p><strong>Preço:</strong> R$ 99,90/mês</p>
+                <p><strong>Ideal para:</strong> Empresas de pequeno a médio porte.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Controle de estoque completo (entradas, saídas, mínimo e máximo).</li>
+                    <li>Geração automática de relatórios diários e mensais.</li>
+                    <li>Cadastro de até 500 produtos.</li>
+                    <li>Integração com sistemas de vendas.</li>
+                    <li>Suporte via e-mail e chat.</li>
+                </ul>
+            </div>
+
+            <div class="plano">
+                <h2>Plano Avançado</h2>
+                <p><strong>Preço:</strong> R$ 199,90/mês</p>
+                <p><strong>Ideal para:</strong> Empresas de médio a grande porte.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Tudo do plano intermediário.</li>
+                    <li>Automação de pedidos de reposição.</li>
+                    <li>Controle multiestoque (vários locais).</li>
+                    <li>Relatórios customizáveis com gráficos.</li>
+                    <li>Cadastro ilimitado de produtos.</li>
+                    <li>Acesso para 3 usuários simultâneos.</li>
+                    <li>Suporte via telefone, e-mail e chat.</li>
+                </ul>
+            </div>
+
+            <div class="plano">
+                <h2>Plano Personalizado</h2>
+                <p><strong>Preço:</strong> Sob consulta.</p>
+                <p><strong>Ideal para:</strong> Empresas que precisam de soluções específicas.</p>
+                <h3>Funcionalidades:</h3>
+                <ul>
+                    <li>Integrações avançadas (ERPs, marketplaces, APIs).</li>
+                    <li>Customizações exclusivas para o negócio.</li>
+                    <li>Treinamento para a equipe.</li>
+                    <li>Suporte dedicado.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="opcoes-pagamento">
+            <h2>Opções de Pagamento</h2>
+            <p><strong>Mensal:</strong> Pagamento recorrente.</p>
+            <p><strong>Anual (desconto de 15%):</strong> Pagamento à vista com economia.</p>
+        </section>
+
+        <section id="promocao">
+            <h2>Promoção de Lançamento</h2>
+            <p>30 dias gratuitos para novos clientes.</p>
+            <p>Desconto de 10% nos primeiros 6 meses ao contratar planos anuais.</p>
+        </section>
+
+        <p class="link-paginainicial">
+            <a href="/inicio.html">Voltar para a página inicial</a>
+        </p>
+    </div>
+</body>
+</html>
+
+(CSS)(pagina inicial)
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8ddd8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #1E313F; /* Texto principal */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #1E313F; /* Título com tom escuro */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #1E313F;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #e2eaea; /* Fundo dos cartões */
+    border: 1px solid #b0c4c4; /* Borda harmônica */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card h2 {
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #1E313F;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #d8ddd8; /* Fundo mais claro ao passar o mouse */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Ícones aumentam levemente */
+}
+
+.card:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e2eaea; /* Volta ao fundo original ao clicar */
+}
+
+.retornar-login {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+CSS( duvidas)
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8ddd8; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #1E313F;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #1E313F; 
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555; 
+}
+
+/* Formulários */
+form {
+    background: #e2eaea;
+    border: 1px solid #b0c4c4; /* Borda harmônica */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1em;
+    color: #1E313F;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b0c4c4;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    background-color: #d8ddd8;
+    margin-bottom: 15px;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #1E313F;
+    outline: none;
+    background-color: #e2eaea;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1E313F;
+    color: #e2eaea;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button:active {
+    background-color: #555;
+}
+
+.botao-retornar {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+.retornar {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+CSS(estoque)
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8ddd8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #b0c4c4;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #737c87;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.acoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.botao {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.add-botao {
+    background-color: #1E313F;
+}
+
+.edit-botao {
+    background-color: #333;
+}
+
+.delete-botao {
+    background-color: #121111;
+}
+
+.botao:hover {
+    opacity: 0.9;
+}
+
+.link-voltar {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+CSS(shist)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #d8ddd8;
+    padding: 20px;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #e2eaea;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2B4857;
+    text-decoration: underline;
+}
+
+.link-paginainicial {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    section p {
+        font-size: 0.95em;
+    }
+
+    .membro {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .membro {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.equipe-fotos {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.membro {
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px); 
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.membro.ceo {
+    flex: 1 1 100%; 
+    max-width: 100%; 
+    margin-top: 20px; 
+}
+
+.equipe-img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.equipe-img:hover {
+    transform: scale(1.1);
+}
+
+.card-planos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #e2eaea;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-planos a {
+    text-decoration: none;
+    color: #1E313F;
+}
+
+.menu-planos:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.menu-planos h4 {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.menu-planos p {
+    font-size: 1em;
+    color: #333;
+}
+
+CSS(invent)
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8ddd8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: #b0c4c4;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table thead th {
+    background-color: #1E313F;
+    color: #fff;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #e9e9e9;
+}
+
+table tbody tr:hover {
+    background-color: #d8ddd8;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.link-estoque {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+CSS(login)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8ddd8;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo da seção esquerda */
+.menu-esquerda {
+    background-color: #1E313F; 
+    color: #d8ddd8;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-esquerda .logo-image {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+}
+
+.menu-direita {
+    background-color: #e2eaea;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-direita h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.caixa-login {
+    width: 100%;
+    max-width: 400px;
+    background-color: #b0c4c4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.caixa-login h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.caixa-login label {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.caixa-login input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.caixa-login input:focus {
+    border-color: #1E313F;
+    outline: none;
+}
+
+.caixa-login .forgot-password {
+    font-size: 0.9em;
+    color: #333;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.caixa-login .forgot-password:hover {
+    color: #d8ddd8;
+    text-decoration: none;
+}
+
+.caixa-login button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1E313F;
+    color: #d8ddd8;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.caixa-login button:hover {
+    background-color: #333;
+}
+
+.contato {
+    margin-top: 20px;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.contato span {
+    font-size: 1.2em;
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .menu-esquerda, .menu-direita {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .caixa-login {
+        max-width: 90%;
+    }
+
+    .menu-esquerda .logo-image {
+        width: 60%;
+        max-width: 200px;
+    }
+}
+
+CSS(perfil)
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8ddd8; 
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #1E313F; 
+}
+
+.container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: #b0c4c4;
+    padding: 75px;
+    border-radius: 8px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555; 
+}
+
+/* Formulários */
+form {
+    background: #e2eaea; 
+    border: 1px solid #b0c4c4;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 1em;
+    color: #1E313F;
+    display: block;
+    margin: 12px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b0c4c4;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    background-color: #d8ddd8;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #1E313F;
+    outline: none;
+    background-color: #e2eaea;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1E313F;
+    color: #e2eaea;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+button:active {
+    background-color: #555;
+}
+
+.link-paginainicial {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+CSS(planos)
+/* Estilos para a página de planos */
+#planos {
+    margin-top: 30px;
+}
+
+.plano {
+    background-color: #e2eaea;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plano h2 {
+    font-size: 1.8em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+.plano p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.plano h3 {
+    font-size: 1.4em;
+    color: #1E313F;
+    margin-top: 10px;
+}
+
+.plano ul {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.plano ul li {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+#opcoes-pagamento, #promocao {
+    background-color: #e2eaea;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#opcoes-pagamento h2, #promocao h2 {
+    font-size: 1.8em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+#opcoes-pagamento p, #promocao p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.link-paginainicial {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.link-paginainicial a {
+    text-decoration: none;
+    color: #1E313F;
+    font-size: 1.1em;
+}
+h1 {
+    font-size: 2em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}

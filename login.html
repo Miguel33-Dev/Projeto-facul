@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WZK Inventory - Login</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        min-height: 500px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    .menu-esquerda {
+        background: linear-gradient(135deg, #1E313F 0%, #2a4a5a 100%);
+        color: #d8ddd8;
+        padding: 40px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .menu-esquerda .logo-image {
+        width: 80%;
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 20px;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    }
+
+    .menu-esquerda h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-esquerda p {
+        font-size: 1.1em;
+        opacity: 0.9;
+    }
+
+    .menu-direita {
+        background-color: #f8f9fa;
+        padding: 50px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .menu-direita h2 {
+        font-size: 2em;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .caixa-login,
+    .caixa-registro {
+        width: 100%;
+        max-width: 380px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        animation: slideIn 0.3s ease;
+    }
+
+    .caixa-registro.hidden,
+    .caixa-login.hidden {
+        display: none;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .caixa-login h3,
+    .caixa-registro h3 {
+        font-size: 1.5em;
+        color: #1E313F;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .caixa-login label,
+    .caixa-registro label {
+        font-size: 0.95em;
+        color: #555;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .caixa-login input,
+    .caixa-registro input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 1em;
+    }
+
+    .caixa-login input:focus,
+    .caixa-registro input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        outline: none;
+    }
+
+    .caixa-login button,
+    .caixa-registro button {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s ease;
+        margin-bottom: 15px;
+    }
+
+    .caixa-login button:hover,
+    .caixa-registro button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    .caixa-login button:active,
+    .caixa-registro button:active {
+        transform: translateY(0);
+    }
+
+    .link-registro,
+    .link-voltar {
+        text-align: center;
+        color: #666;
+        font-size: 0.95em;
+        margin-top: 10px;
+    }
+
+    .link-registro a,
+    .link-voltar a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .link-registro a:hover,
+    .link-voltar a:hover {
+        color: #764ba2;
+        text-decoration: underline;
+    }
+
+    .mensagem {
+        margin-bottom: 15px;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: 500;
+        display: none;
+    }
+
+    .mensagem.sucesso {
+        display: block;
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .mensagem.erro {
+        display: block;
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .contato {
+        margin-top: 20px;
+        color: #666;
+        font-size: 0.9em;
+    }
+
+    .contato a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .contato a:hover {
+        color: #764ba2;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            min-height: auto;
+            border-radius: 0;
+        }
+
+        .menu-esquerda {
+            padding: 30px 20px;
+            flex: none;
+            width: 100%;
+        }
+
+        .menu-direita {
+            padding: 30px 20px;
+            flex: none;
+            width: 100%;
+        }
+
+        .menu-esquerda .logo-image {
+            max-width: 150px;
+        }
+
+        .menu-esquerda h1 {
+            font-size: 1.8em;
+        }
+
+        .caixa-login,
+        .caixa-registro {
+            max-width: 100%;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="menu-esquerda">
+            <img src="./Imagens/WZK.jpg" alt="Logo WZK Inventory" class="logo-image">
+            <h1>WZK Inventory</h1>
+            <p>Sistema de Gestão de Estoque</p>
+        </div>
+
+        <div class="menu-direita">
+            <!-- Formulário de Login -->
+            <div id="formLogin" class="caixa-login">
+                <h3>Bem-vindo de volta!</h3>
+                <div id="mensagemLogin" class="mensagem"></div>
+                <form id="loginForm">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com" required>
+                    
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Sua senha" required>
+                                        
+                    <button type="submit">Entrar</button>
+
+                    <div class="link-registro">
+                        Não tem conta? <a onclick="mostrarRegistro()">Criar agora</a>
+                    </div>
+                </form>
+
+                <p class="contato"> 
+                    <a href="duvidas2.html">Fale conosco 🎧</a>
+                </p>
+            </div>
+
+            <!-- Formulário de Registro -->
+            <div id="formRegistro" class="caixa-registro hidden">
+                <h3>Criar nova conta</h3>
+                <div id="mensagemRegistro" class="mensagem"></div>
+                <form id="registroForm">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+
+                    <label for="emailRegistro">E-mail</label>
+                    <input type="email" id="emailRegistro" placeholder="seu@email.com" required>
+                    
+                    <label for="senhaRegistro">Senha</label>
+                    <input type="password" id="senhaRegistro" placeholder="Mínimo 6 caracteres" required>
+
+                    <label for="senhaConfirm">Confirmar Senha</label>
+                    <input type="password" id="senhaConfirm" placeholder="Confirme a senha" required>
+                                        
+                    <button type="submit">Criar Conta</button>
+
+                    <div class="link-voltar">
+                        Já tem conta? <a onclick="mostrarLogin()">Faça login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarLogin() {
+            document.getElementById('formLogin').classList.remove('hidden');
+            document.getElementById('formRegistro').classList.add('hidden');
+            document.getElementById('loginForm').reset();
+            document.getElementById('mensagemLogin').className = 'mensagem';
+        }
+
+        function mostrarRegistro() {
+            document.getElementById('formLogin').classList.add('hidden');
+            document.getElementById('formRegistro').classList.remove('hidden');
+            document.getElementById('registroForm').reset();
+            document.getElementById('mensagemRegistro').className = 'mensagem';
+        }
+
+        // Formulário de Login
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const mensagem = document.getElementById('mensagemLogin');
+            
+            try {
+                const response = await fetch('http://localhost:8080/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, senha })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    localStorage.setItem('token', data.token);
+                    localStorage.setItem('usuario', JSON.stringify(data.usuario));
+                    mensagem.className = 'mensagem sucesso';
+                    mensagem.textContent = '✓ Login bem-sucedido! Redirecionando...';
+                    setTimeout(() => {
+                        window.location.href = 'paginainicial.html';
+                    }, 1500);
+                } else {
+                    mensagem.className = 'mensagem erro';
+                    mensagem.textContent = data.erro || '✗ Erro ao fazer login';
+                }
+            } catch (error) {
+                mensagem.className = 'mensagem erro';
+                mensagem.textContent = '✗ Erro de conexão com o servidor';
+                console.error('Erro:', error);
+            }
+        });
+
+        // Formulário de Registro
+        document.getElementById('registroForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('emailRegistro').value;
+            const senha = document.getElementById('senhaRegistro').value;
+            const senhaConfirm = document.getElementById('senhaConfirm').value;
+            const mensagem = document.getElementById('mensagemRegistro');
+            
+            // Validações
+            if (senha !== senhaConfirm) {
+                mensagem.className = 'mensagem erro';
+                mensagem.textContent = '✗ As senhas não coincidem!';
+                return;
+            }
+
+            if (senha.length < 6) {
+                mensagem.className = 'mensagem erro';
+                mensagem.textContent = '✗ A senha deve ter pelo menos 6 caracteres!';
+                return;
+            }
+            
+            try {
+                const response = await fetch('http://localhost:8080/api/registro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nome, email, senha })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    mensagem.className = 'mensagem sucesso';
+                    mensagem.textContent = '✓ Conta criada com sucesso! Redirecionando para login...';
+                    
+                    document.getElementById('registroForm').reset();
+                    
+                    setTimeout(() => {
+                        mostrarLogin();
+                        document.getElementById('email').value = email;
+                        document.getElementById('email').focus();
+                    }, 1500);
+                } else {
+                    mensagem.className = 'mensagem erro';
+                    mensagem.textContent = data.erro || '✗ Erro ao criar conta';
+                }
+            } catch (error) {
+                mensagem.className = 'mensagem erro';
+                mensagem.textContent = '✗ Erro de conexão com o servidor';
+                console.error('Erro:', error);
+            }
+        });
+    </script>
+</body>
+</html>

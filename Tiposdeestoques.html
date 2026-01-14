@@ -1,0 +1,253 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de estoques</title>
+</head>
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #1E313F; /* Título com tom escuro */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    color: #1E313F;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #e2eaea; /* Fundo dos cartões */
+    border: 1px solid #b0c4c4; /* Borda harmônica */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card h2 {
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+    color: #1E313F;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #d8ddd8; /* Fundo mais claro ao passar o mouse */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Ícones aumentam levemente */
+}
+
+.card:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #e2eaea; /* Volta ao fundo original ao clicar */
+}
+
+.retornar-login {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1E313F;
+}
+
+a:hover {
+    color: #1E313F;
+}
+
+a:active {
+    color: #1E313F;
+}
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Qual tipo de estoque você esta procurando?</h1>
+            <p>Temos 12 tipos de estoque para você:</p>
+            <!-- Estoque inativo;
+
+2. Estoque mínimo;
+
+3. Estoque máximo;
+
+4. Estoque de Antecipação/sazonal;
+
+5. Estoque de proteção/isolador;
+
+6. Estoque de segurança;
+
+7. Estoque de contingência;
+
+8. Estoque consignado;
+
+9. Estoque de ciclo;
+
+10. Estoque regulador;
+
+11. Estoque em trânsito;
+
+12. Dropshipping. -->
+        </header>
+        <div class="menu">
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque inativo">
+                    <h2>Estoque inativo</h2>
+                    <p>Itens sem movimentação por um período significativo. Geralmente aplicável para análise de baixa rotatividade ou descontinuação.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque mínimo">
+                    <h2>Estoque mínimo</h2>
+                    <p>Quantidade mínima necessária para evitar rupturas. Aplicado como limite para acionar reabastecimento.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque máximo">
+                    <h2>Estoque máximo</h2>
+                    <p>Limite superior para evitar excessos. Usado para otimizar espaço e custos.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                    <h2>Estoque de Antecipação/sazonal</h2>
+                    <p>Acúmulo antes de períodos de alta demanda. Comum em datas comemorativas ou ciclos sazonais.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                    <h2>Estoque de proteção/isolador</h2>
+                    <p>Reserva contra variações imprevistas na demanda ou adequadas. Aplicável em cenários de incertezas.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                    <h2> Estoque de segurança</h2>
+                    <p>Margem extra para prevenir vazamentos no abastecimento. Usado em operações críticas.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                    <h2> Estoque de contingência</h2>
+                    <p>Planejado para emergências, como desastres ou incidentes. Utilizado em indústrias sensíveis.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                    <h2> Estoque consignado</h2>
+                    <p>Itens armazenados no cliente, mas propriedade do fornecedor. Aplicado para melhorar a disponibilidade sem onerar o cliente.</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                    <h2>Estoque de ciclo</h2>
+                    <p>Quantidades permitidas para atender ciclos normais de produção ou vendas. Usado na rotina operacional.</p>
+                </a>
+            </div>
+        </div>
+                 <div class="card">
+            <a href="#">
+                <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                <h2>Estoque regulador</h2>
+                <p>Quantidades permitidas para atender ciclos normais de produção ou vendas. Usado na rotina operacional.</p>
+            </a>
+        </div>
+    </div>
+                 <div class="card">
+                     <a href="#">
+                       <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+                        <h2>Estoque de ciclo</h2>
+                     <p>Quantidades permitidas para atender ciclos normais de produção ou vendas. Usado na rotina operacional.</p> 
+             </a>
+         </div>
+    </div>
+     <div class="card">
+    <a href="#">
+        <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+        <h2>Estoque em trânsito</h2>
+        <p>Quantidades permitidas para atender ciclos normais de produção ou vendas. Usado na rotina operacional.</p>
+    </a>
+     </div>
+</div>
+         <div class="card">
+    <a href="#">
+        <img src="Imagens/caixa.jpg" alt="Estoque de Antecipação/sazonal">
+        <h2>Dropshipping</h2>
+        <p>Quantidades permitidas para atender ciclos normais de produção ou vendas. Usado na rotina operacional.</p>
+    </a>
+     </div>
+</div>
+        <p class="retornar-login">
+            <a href="paginainicial.html"> Voltar para pagina inicial</a>
+        </p>
+    </div>
+</body>
+</html>

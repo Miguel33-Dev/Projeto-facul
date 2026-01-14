@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - Wzk Inventory</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #e2eaea;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #1E313F;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+a {
+    color: #1E313F;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2B4857;
+    text-decoration: underline;
+}
+
+.link-paginainicial {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    section p {
+        font-size: 0.95em;
+    }
+
+    .membro {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 480px) {
+    .membro {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.equipe-fotos {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.membro {
+    text-align: center;
+    flex: 1 1 calc(33.333% - 20px); 
+    max-width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.membro.ceo {
+    flex: 1 1 100%; 
+    max-width: 100%; 
+    margin-top: 20px; 
+}
+
+.equipe-img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.equipe-img:hover {
+    transform: scale(1.1);
+}
+
+.card-planos {
+    display: flex;
+    flex-direction: column; /* Elementos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    padding: 20px;
+    background-color: #e2eaea; /* Fundo claro */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 600px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o card na página */
+}
+
+/* Botão estilizado */
+#btn-acessar-planos {
+    background-color: #d3d9df; /* Cinza claro para menor destaque */
+    color: #6c757d; /* Cinza médio para o texto */
+    border: 1px solid #c0c7cd; /* Borda fina para separação */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+    margin-top: 20px; /* Espaçamento acima */
+}
+
+/* Efeito ao passar o mouse */
+#btn-acessar-planos:hover {
+    background-color: #c7ced4; /* Cinza levemente mais escuro */
+    color: #5a6268; /* Texto um pouco mais escuro */
+}
+
+
+
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sobre nós...</h1>
+        </header>
+
+        <section id="sobre">
+            <h2>Sobre a Wzk Inventory</h2>
+            <p>A Wzk Inventory é especializada no desenvolvimento de sistemas eficientes para o gerenciamento de estoque, oferecendo soluções tecnológicas que facilitam a gestão, otimizam processos e garantem maior controle e precisão nas operações.</p>
+        </section>
+
+        <section id="historia">
+            <h2>Nossa História</h2>
+            <p>Fundada em 2010, a Wzk Inventory começou como um projeto de paixão por tecnologia e logística.<br> 
+                Com uma equipe apaixonada por tecnologia e inovação, a Wzk foi criada para oferecer soluções personalizadas que atendem desde pequenas lojas a grandes redes de distribuição. <br> 
+                Ao longo dos anos, a Wzk cresceu, mas nosso compromisso com a inovação e excelência nunca mudou. Nosso lema é simples: "Organizar é crescer". Acreditamos que uma gestão de estoque eficiente é o coração de qualquer negócio bem-sucedido, e estamos aqui para garantir que nossos clientes alcancem seu máximo potencial.</p>
+        </section>
+
+        <section id="missao-visao">
+            <h2>Missão, Visão e Valores</h2>
+            <p><strong>Missão:</strong> Proporcionar aos nossos clientes ferramentas inovadoras e acessíveis para a gestão de estoques, promovendo eficiência, organização e resultados mensuráveis.</p>
+            <p><strong>Visão:</strong> Ser referência no mercado de soluções tecnológicas para gerenciamento de estoque, reconhecida pela inovação, confiabilidade e impacto positivo nos negócios dos nossos clientes.</p>
+            <p><strong>Valores:</strong> <br>
+                • Inovação: Investimos continuamente em tecnologia e aprimoramento de nossas soluções. <br>
+                • Compromisso com o cliente: Nossa prioridade é atender às necessidades dos nossos parceiros com excelência <br>
+                • Transparência: Atuamos de forma ética e clara em todas as relações. <br>
+                • Simplicidade: Oferecemos sistemas intuitivos e práticos, adaptados às realidades de diferentes empresas.</p>
+        </section>
+
+        <section id="equipe">
+            <h2>Nosso Time</h2>
+            <p>A equipe da Wzk Inventory é composta por profissionais altamente qualificados, apaixonados por tecnologia e dedicados a oferecer as melhores soluções para os nossos clientes.</p>
+            
+            <div class="equipe-fotos">
+               
+                <div class="membro">
+                    <img src="/Imagens/membro3.jpg" alt="Foto do Membro 3" class="equipe-img">
+                    <p> <b>Fabrício Miguel da Silva</b> - Desenvolvedor Web</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Card redirecionando para os planos -->
+         <section id="planos">
+            <h2>Conheça Nossos Planos 📊</h2>
+            <div class="menu-planos">
+                    <p>Descubra as opções disponíveis para o seu negócio e escolha o plano ideal para suas necessidades.</p>
+                <button id="btn-acessar-planos">Clique aqui para acessar nossos planos!</button>
+            </div>
+        </section>        
+
+        <p class="link-paginainicial">
+            <a href="paginainicial.html">Voltar para a página inicial</a>
+        </p>
+    </div>
+    <script>
+        document.getElementById('btn-acessar-planos').addEventListener('click', function () {
+    window.location.href = 'planos.html'; // Redireciona para a página de planos
+});
+    </script>
+</body>
+</html>
